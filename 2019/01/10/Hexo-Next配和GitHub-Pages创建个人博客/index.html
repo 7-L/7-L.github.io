@@ -101,7 +101,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/sshUrl.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/gitRepo.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/triLine.png">
-<meta property="og:updated_time" content="2019-01-10T12:36:45.630Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/hold.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/holdAdd.png">
+<meta property="og:updated_time" content="2019-01-14T06:23:02.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Next配合GitHub Pages创建个人博客">
 <meta name="twitter:description" content="运行环境配置 首先安装Node.js，参考地址:下载安装Node.js， 接着安装git，参考地址：下载安装git，Mac OS直接使用terminal即可，Windows可以选择使用Git Gui。这些的安装过程就不在详述。 接下来就要面对重头戏   Hexo 的安装。首先通过terminal进入到自己想要的目录。 :~$ cd Documents/githubPages/，到达指定目录后，安装">
@@ -325,6 +327,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -347,6 +380,11 @@
 <h1 id="Hexo主题选择"><a href="#Hexo主题选择" class="headerlink" title="Hexo主题选择"></a>Hexo主题选择</h1><p>  关于Hexo中的主题有很多，我在目前使用过两个一个是<code>Yilia</code>另一个也就是目前用的<code>Next</code>。这里以<code>Next</code>为例。<br>  <br><br>  输入命令<code>:~/Documents/githubPages/Hexo-Next/blog$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code>切记都是在blog目录下进行的。<br><img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/installNext.png" alt="install Next"><br><br>接下来在blog目录下的themes文件夹里已经有了<code>Next</code>，这说明啥，当然是安装好了😂，其中这里<strong><em> 提示一点 </em></strong> <code>Next/_config.yml</code>和<code>blog/_config.yml</code>都为配置文件，前者为<code>Next</code>主题的配置文件，后者则为博客的基本配置（包括还未说到部署到GitHub Pages的配置）。既然已经安装好了<code>Next</code>，打开<code>vim _config.yml</code> ，注意是<strong> blog目录下的配置文件 </strong>。修改，其中<code>themes</code>一行为 <code>themes: next</code>这里需要注意<strong>「 : 」  </strong>后面是有一个空格的。<br><img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/themes.png" alt="设置主题为next"> <br><br>这是运行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code> 然后看看本地起的服务是否已经和最开始的主体不一样了，说明主题已经选择成功了。</p>
 <h1 id="GitHub-Pages创建"><a href="#GitHub-Pages创建" class="headerlink" title="GitHub Pages创建"></a>GitHub Pages创建</h1><p>关于在GitHub上创建你的用户名的一个仓库例如<code>username.github.io</code>,切记username和你的用户名一样，比如你叫<code>sunwukong</code>名称就为<code>sunwukong.github.io</code>，不会要被谢罪吧。哦对了，如果在电脑没配过ssh key的可以看下这个<a href="https://blog.csdn.net/u014103733/article/details/79190004" target="_blank" rel="noopener">GitHub添加ssh key</a>，随便找了一篇博客，都是大概这个意思。其实创建完<code>username.github.io</code>就可以直接输入到浏览器看到相应内容了。</p>
 <h1 id="通过Hexo部署到GitHub-Pages"><a href="#通过Hexo部署到GitHub-Pages" class="headerlink" title="通过Hexo部署到GitHub Pages"></a>通过Hexo部署到GitHub Pages</h1><p>最后一步，也是最重要一步，如果把每次的变动更新到GitHub上。首先上GitHub，点开你的<code>username.github.io</code>仓库，把地址拷贝出来<br><img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/sshUrl.png" alt="2019年01月10日15:38:49">然后在<code>blog</code>目录下打开配置文件<code>vim _config.yml</code> 在<code>deploy:</code>下填写对应方式，以及相应地址。如下图所示<img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/gitRepo.png" alt="type and repo ">至此算是配置成功。以后在每次添加新文章，或是有什么改动，分别运行 <code>hexo clean</code>、<code>hexo g</code>、<code>hexo d</code> 也可以<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>效果如下图所示<img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/triLine.png" alt="deploy">这几个命令的作用可以去网上搜一搜我就不赘述了。哦对了，在使用<code>hexo deploy</code>这个命令之前需要提前安装一个拓展 <code>npm install hexo-deployer-git --save</code>。每次有所改动，直接<strong><em> <del>素质</del>三连 </em></strong> 即可。</p>
+<h1 id="主题添加fork-me和-rss"><a href="#主题添加fork-me和-rss" class="headerlink" title="主题添加fork me和 rss"></a>主题添加fork me和 rss</h1><p>在<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">GitHub Ribbons</a>或<a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">GitHub Corners</a>选择一款挂饰，拷贝方框内的代码。<br><img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/hold.png" alt="挂件"><br><br><br>将刚刚复制的挂饰代码，添加到<code>Blog/themes/next/layout/_layout.swig</code>文件中，添加位置如下图所示(放在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>下方)：<br><img src="/2019/01/10/Hexo-Next配和GitHub-Pages创建个人博客/holdAdd.png" alt="配置位置"></p>
+<hr>
+<p>接下来添加rss订阅。首先添加Hexo插件<code>npm install --save hexo-generator-feed</code>，安装成功后，更改博客配置文件，在对应位置添加<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line"><span class="attr">plugins:</span> <span class="string">hexo-generate-feed</span></span><br></pre></td></tr></table></figure></p>
+<p>接着在配置主题的配置文件中对应位置更改，添加<code>/atom.xml</code><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="comment"># Leave rss as empty to use site's feed link.</span></span><br><span class="line"><span class="comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span> <span class="string">//注意：有一个空格</span></span><br></pre></td></tr></table></figure></p>
+<p>至此就完成了，添加fork me和rss的功能。</p>
 
       
     </div>
@@ -360,7 +398,7 @@
 
     
     <div>
-    
+
   
     <div>
     
@@ -510,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行环境配置"><span class="nav-number">1.</span> <span class="nav-text">运行环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo主题选择"><span class="nav-number">2.</span> <span class="nav-text">Hexo主题选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub-Pages创建"><span class="nav-number">3.</span> <span class="nav-text">GitHub Pages创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Hexo部署到GitHub-Pages"><span class="nav-number">4.</span> <span class="nav-text">通过Hexo部署到GitHub Pages</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行环境配置"><span class="nav-number">1.</span> <span class="nav-text">运行环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo主题选择"><span class="nav-number">2.</span> <span class="nav-text">Hexo主题选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub-Pages创建"><span class="nav-number">3.</span> <span class="nav-text">GitHub Pages创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Hexo部署到GitHub-Pages"><span class="nav-number">4.</span> <span class="nav-text">通过Hexo部署到GitHub Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题添加fork-me和-rss"><span class="nav-number">5.</span> <span class="nav-text">主题添加fork me和 rss</span></a></li></ol></div>
             
 
           </div>
@@ -537,6 +575,15 @@
   </span>
   <span class="author" itemprop="copyrightHolder">h7lyaphets</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
   
 </div>
 
