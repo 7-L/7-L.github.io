@@ -324,7 +324,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  
+                   字
                 </span>
               
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  
+                   分钟
                 </span>
               
             </div>
@@ -478,7 +478,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  
+                   字
                 </span>
               
 
@@ -494,7 +494,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  
+                   分钟
                 </span>
               
             </div>
@@ -528,7 +528,21 @@
 <p>接下来添加rss订阅。首先添加Hexo插件<code>npm install --save hexo-generator-feed</code>，安装成功后，更改博客配置文件，在对应位置添加<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line"><span class="attr">plugins:</span> <span class="string">hexo-generate-feed</span></span><br></pre></td></tr></table></figure></p>
 <p>接着在配置主题的配置文件中对应位置更改，添加<code>/atom.xml</code><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="comment"># Leave rss as empty to use site's feed link.</span></span><br><span class="line"><span class="comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span> <span class="string">//注意：有一个空格</span></span><br></pre></td></tr></table></figure></p>
 <p>至此就完成了，添加fork me和rss的功能。</p>
-<h1 id="添加tags和categories"><a href="#添加tags和categories" class="headerlink" title="添加tags和categories"></a>添加tags和categories</h1>
+<h1 id="添加tags和categories"><a href="#添加tags和categories" class="headerlink" title="添加tags和categories"></a>添加tags和categories</h1><ul>
+<li><p>首先创建Tag页面<code>:$ hexo new page &quot;tags&quot;</code>，这时在你的<code>/blog/source/</code>目录下有了刚刚创建的<code>tags</code>的文件夹里面包括<code>index文件夹</code>和<code>index.md</code>，这时我们要操作这个<code>index.md</code>文件，修改为一下内容</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2019-01-15 13:31:28</span><br><span class="line">type: tags</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着创建categories，执行命令<code>:$ hexo new page &quot;categories&quot;</code>，在source目录下有了<code>categories</code>的文件夹里面包括<code>index文件夹</code>和<code>index.md</code>，这时我们要操作这个<code>index.md</code>文件，修改为一下内容</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2019-01-15 13:34:36</span><br><span class="line">type: "categories"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后将<code>tag</code>和<code>category</code>添加到菜单中，打开<code>nexT</code>的主题配置文件，在<code>menu</code>中添加<code>tags</code>和<code>categories</code>，如一下代码所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  # about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在以后添加文章的时候，标题一栏中的tags，加上对应的标签即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: xxx</span><br><span class="line">date: 2019-01-10 15:52:09</span><br><span class="line">tags: [Hexo,blog,github Pages]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
           
         
       
