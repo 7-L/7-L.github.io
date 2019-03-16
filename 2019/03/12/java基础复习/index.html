@@ -90,7 +90,7 @@
 <meta property="og:description" content="final修饰符 修饰变量，变量的引用地址不可变，但是地址中的内容可以变。 修饰方法，方法不可被重写，但是还是可以重载 修饰类，类不可继承。不可变类，说的是一个类一旦被实例化，就不可改变自身的状态。常见的比如String和基本数据类型的包装类，对于这种不可变类，一旦在进行引用传递的时候，形参一开始就和实际参数指向的不是一个地址，所以在方法中对形参的改变，并不会影响实际参数。 我认为不可变类应该是理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/12/java基础复习/default.jpeg">
-<meta property="og:updated_time" content="2019-03-15T07:03:38.028Z">
+<meta property="og:updated_time" content="2019-03-16T05:49:06.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础复习">
 <meta name="twitter:description" content="final修饰符 修饰变量，变量的引用地址不可变，但是地址中的内容可以变。 修饰方法，方法不可被重写，但是还是可以重载 修饰类，类不可继承。不可变类，说的是一个类一旦被实例化，就不可改变自身的状态。常见的比如String和基本数据类型的包装类，对于这种不可变类，一旦在进行引用传递的时候，形参一开始就和实际参数指向的不是一个地址，所以在方法中对形参的改变，并不会影响实际参数。 我认为不可变类应该是理">
@@ -347,6 +347,7 @@
 <h5 id="抽象类和接口简单的区别"><a href="#抽象类和接口简单的区别" class="headerlink" title="抽象类和接口简单的区别"></a>抽象类和接口简单的区别</h5><p>1、抽象类可以有构造，只不过不能new。<br><br>2、接口中可以有变量，但是无论你怎么写，最后都是public static final的。<br><br>3、抽象类中可以有静态方法，接口中也可以有。<br></p>
 <p>扩展：<br><br>1、接口中可以有非抽象的方法，比如default方法（Java 1.8）。<br><br>2、接口中可以有带方法体的方法。（Java 1.8）<br><br>3、接口中的方法默认是public的。<br></p>
 <p><strong>Java程序初始化的执行顺序</strong>：父类静态变量—&gt;父类静态代码块—&gt;子类静态变量—&gt;子类静态代码块—&gt;父类非静态变量—&gt;父类非静态代码块—&gt;父类构造方法—&gt;子类非静态变量—&gt;子类非静态代码块—&gt;子类构造方法<br><br>其中，<strong>静态变量的执行顺序不一定在静态代码块前面，除非在代码上静态变量是出现在前面，它们之间得优先级是同等的</strong></p>
+<h5 id="Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"><a href="#Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。" class="headerlink" title="Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"></a>Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。</h5><p>(1)加载：容器通过类加载器使用servlet类对应的文件加载servlet<br><br>(2)创建：通过调用servlet构造函数创建一个servlet对象<br><br>(3)初始化：调用init方法初始化<br><br>(4)处理客户请求：每当有一个客户请求，容器会创建一个线程来处理客户请求<br><br>(5)卸载：调用destroy方法让servlet自己释放其占用的资源<br></p>
 
       
     </div>
@@ -527,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰符"><span class="nav-number">1.</span> <span class="nav-text">final修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有一道题可以作为理解一下里面的具体用法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">有一道题可以作为理解一下里面的具体用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重写和重载的简单区别"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">重写和重载的简单区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抽象类和接口简单的区别"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">抽象类和接口简单的区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰符"><span class="nav-number">1.</span> <span class="nav-text">final修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有一道题可以作为理解一下里面的具体用法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">有一道题可以作为理解一下里面的具体用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重写和重载的简单区别"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">重写和重载的简单区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抽象类和接口简单的区别"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">抽象类和接口简单的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。</span></a></li></ol></li></ol></div>
             
 
           </div>
