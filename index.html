@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/12/java基础复习/" itemprop="url">java基础复习</a></h1>
+                <a class="post-title-link" href="/2019/03/12/java基础复习/" itemprop="url">java基础知识点</a></h1>
         
 
         <div class="post-meta">
@@ -349,7 +349,7 @@
 <h5 id="抽象类和接口简单的区别"><a href="#抽象类和接口简单的区别" class="headerlink" title="抽象类和接口简单的区别"></a>抽象类和接口简单的区别</h5><p>1、抽象类可以有构造，只不过不能new。<br><br>2、接口中可以有变量，但是无论你怎么写，最后都是public static final的。<br><br>3、抽象类中可以有静态方法，接口中也可以有。<br></p>
 <p>扩展：<br><br>1、接口中可以有非抽象的方法，比如default方法（Java 1.8）。<br><br>2、接口中可以有带方法体的方法。（Java 1.8）<br><br>3、接口中的方法默认是public的。<br></p>
 <p><strong>Java程序初始化的执行顺序</strong>：父类静态变量—&gt;父类静态代码块—&gt;子类静态变量—&gt;子类静态代码块—&gt;父类非静态变量—&gt;父类非静态代码块—&gt;父类构造方法—&gt;子类非静态变量—&gt;子类非静态代码块—&gt;子类构造方法<br><br>其中，<strong>静态变量的执行顺序不一定在静态代码块前面，除非在代码上静态变量是出现在前面，它们之间得优先级是同等的</strong></p>
-<h5 id="Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"><a href="#Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。" class="headerlink" title="Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"></a>Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。</h5><p>(1)加载：容器通过类加载器使用servlet类对应的文件加载servlet<br><br>(2)创建：通过调用servlet构造函数创建一个servlet对象<br><br>(3)初始化：调用init方法初始化<br><br>(4)处理客户请求：每当有一个客户请求，容器会创建一个线程来处理客户请求<br><br>(5)卸载：调用destroy方法让servlet自己释放其占用的资源<br></p>
+<h5 id="Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"><a href="#Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。" class="headerlink" title="Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。"></a>Servlet的生命周期分为5个阶段：加载、创建、初始化、处理客户请求、卸载。</h5><p>1.加载：容器通过类加载器使用Servlet类对应的文件来加载Servlet<br><br>2.创建：通过调用Servlet的构造函数来创建一个Servlet实例<br><br>3.初始化：通过调用Servlet的init()方法来完成初始化工作，这个方法是在Servlet已经被创建，但在向客户端提供服务之前调用。<br><br>4.处理客户请求：Servlet创建后就可以处理请求，当有新的客户端请求时，Web容器都会创建一个新的线程来处理该请求。接着调用Servlet的<br>Service()方法来响应客户端请求（Service方法会根据请求的method属性来调用doGet（）和doPost（））<br><br>5.卸载：容器在卸载Servlet之前需要调用destroy()方法，让Servlet释放其占用的资源。<br></p>
 
           
         
@@ -788,7 +788,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
