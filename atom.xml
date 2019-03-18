@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-18T07:04:04.661Z</updated>
+  <updated>2019-03-18T07:07:40.981Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,25 @@
     <link href="http://yoursite.com/2019/03/18/algorithm-by-java/"/>
     <id>http://yoursite.com/2019/03/18/algorithm-by-java/</id>
     <published>2019-03-18T07:04:04.000Z</published>
-    <updated>2019-03-18T07:04:04.661Z</updated>
+    <updated>2019-03-18T07:07:40.981Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记录、积累"><a href="#记录、积累" class="headerlink" title="记录、积累"></a>记录、积累</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><ul><li>写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</li></ul>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;记录、积累&quot;&gt;&lt;a href=&quot;#记录、积累&quot; class=&quot;headerlink&quot; title=&quot;记录、积累&quot;&gt;&lt;/a&gt;记录、积累&lt;/h1&gt;&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;
+      
+    
     </summary>
     
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="剑指offer" scheme="http://yoursite.com/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
