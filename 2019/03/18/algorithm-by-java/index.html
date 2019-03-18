@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与1001">
+<meta name="description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(12345678910111213141516171819202122232425* 说一下大致思路：举例8+9；&amp;lt;br&amp;gt;">
 <meta name="keywords" content="java,算法,剑指offer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="algorithm by java">
 <meta property="og:url" content="http://yoursite.com/2019/03/18/algorithm-by-java/index.html">
 <meta property="og:site_name" content="h7lyaphets">
-<meta property="og:description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与1001">
+<meta property="og:description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(12345678910111213141516171819202122232425* 说一下大致思路：举例8+9；&amp;lt;br&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/18/algorithm-by-java/17.jpg">
-<meta property="og:updated_time" content="2019-03-18T08:17:04.187Z">
+<meta property="og:updated_time" content="2019-03-18T08:18:03.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="algorithm by java">
-<meta name="twitter:description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与1001">
+<meta name="twitter:description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(12345678910111213141516171819202122232425* 说一下大致思路：举例8+9；&amp;lt;br&amp;gt;">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/18/algorithm-by-java/17.jpg">
 
 
@@ -334,17 +334,8 @@
 <li>题目描述</li>
 </ul>
 <blockquote>
-<p>当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式<strong> -b = ~b+1 </strong>来进行计算(也就是补码)。</p>
-<ul>
-<li>说一下大致思路：举例8+9；<br><br><br>8的二进制数为:  1000<br><br><br>9的二进制数为:  1001</li>
-</ul>
-<ol>
-<li>第一步:1000与1001相加但是由于没有正常运算符，不考虑进位情况，最终结果为，0001。这时发现这个结果符合异或的逻辑运算。</li>
-<li>第二步：开始考虑进位，1000与1001相加，接着考虑第二步进位，对0+0，0+1，1+0而言，都不会产生进位，只有1+1时，会向前差生一个进位。此时我们可以想象成是两个数先做位与运算，然后再向前左移动一位。结果为1 0000</li>
-<li>第三步：重复前面的两步，直至不产生进位为止。</li>
-</ol>
+<p>当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式<strong> -b = ~b+1 </strong>来进行计算(<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">* 说一下大致思路：举例8+9；</span><br><span class="line">&lt;br&gt;</span><br><span class="line">8的二进制数为:  1000</span><br><span class="line">&lt;br&gt;</span><br><span class="line">9的二进制数为:  1001</span><br><span class="line">1. 第一步:1000与1001相加但是由于没有正常运算符，不考虑进位情况，最终结果为，0001。这时发现这个结果符合异或的逻辑运算。</span><br><span class="line">2. 第二步：开始考虑进位，1000与1001相加，接着考虑第二步进位，对0+0，0+1，1+0而言，都不会产生进位，只有1+1时，会向前差生一个进位。此时我们可以想象成是两个数先做位与运算，然后再向前左移动一位。结果为1 0000</span><br><span class="line">3. 第三步：重复前面的两步，直至不产生进位为止。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```JAVA</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public int Add(int num1,int num2) &#123;</span><br><span class="line">        int sumWithoutCarrybit;</span><br><span class="line">        int carryBit;</span><br><span class="line">        do&#123;</span><br><span class="line">          int sumWithoutCarrybit = num1^num2;</span><br><span class="line">          int carryBit = (num1&amp;num2)&lt;&lt;1;</span><br><span class="line">          num1 = sumWithoutCarrybit;</span><br><span class="line">          num2 = carryBit;</span><br><span class="line">        &#125;while(num2!=0);</span><br><span class="line">        return num1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sumWithoutCarrybit;</span><br><span class="line">        <span class="keyword">int</span> carryBit;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">          <span class="keyword">int</span> sumWithoutCarrybit = num1^num2;</span><br><span class="line">          <span class="keyword">int</span> carryBit = (num1&amp;num2)&lt;&lt;<span class="number">1</span>;</span><br><span class="line">          num1 = sumWithoutCarrybit;</span><br><span class="line">          num2 = carryBit;</span><br><span class="line">        &#125;<span class="keyword">while</span>(num2!=<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> num1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/03/18/algorithm-by-java/17.jpg" alt="result"></p>
 
       
