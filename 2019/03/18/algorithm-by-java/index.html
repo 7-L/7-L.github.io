@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="记录、积累1.写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(~也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与1">
+<meta name="description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(~也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与100">
 <meta name="keywords" content="java,算法,剑指offer,树,位运算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="algorithm by java">
 <meta property="og:url" content="http://yoursite.com/2019/03/18/algorithm-by-java/index.html">
 <meta property="og:site_name" content="h7lyaphets">
-<meta property="og:description" content="记录、积累1.写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(~也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与1">
+<meta property="og:description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(~也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与100">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/18/algorithm-by-java/17.jpg">
-<meta property="og:updated_time" content="2019-03-26T09:49:20.361Z">
+<meta property="og:updated_time" content="2019-03-26T09:51:11.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="algorithm by java">
-<meta name="twitter:description" content="记录、积累1.写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(~也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与1">
+<meta name="twitter:description" content="记录、积累写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 题目描述   当看到函数体内不可使用这些运算符号的时候，就可以知道这题是考察位运算，这题应用正常移位，进行运算，如果模拟相减，可以利用这个公式 -b = ~b+1 来进行计算(~也就是补码)。  说一下大致思路：举例8+9；8的二进制数为:  10009的二进制数为:  1001   第一步:1000与100">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/18/algorithm-by-java/17.jpg">
 
 
@@ -330,7 +330,7 @@
       
 
       
-        <h1 id="记录、积累"><a href="#记录、积累" class="headerlink" title="记录、积累"></a>记录、积累</h1><h2 id="1-写一个函数，求两个整数之和，要求在函数体内不得使用-、-、-、-四则运算符号。"><a href="#1-写一个函数，求两个整数之和，要求在函数体内不得使用-、-、-、-四则运算符号。" class="headerlink" title="1.写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。"></a>1.写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</h2><ul>
+        <h1 id="记录、积累"><a href="#记录、积累" class="headerlink" title="记录、积累"></a>记录、积累</h1><h2 id="写一个函数，求两个整数之和，要求在函数体内不得使用-、-、-、-四则运算符号。"><a href="#写一个函数，求两个整数之和，要求在函数体内不得使用-、-、-、-四则运算符号。" class="headerlink" title="写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。"></a>写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</h2><ul>
 <li>题目描述</li>
 </ul>
 <blockquote>
@@ -346,7 +346,7 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sumWithoutCarrybit;</span><br><span class="line">        <span class="keyword">int</span> carryBit;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">          <span class="keyword">int</span> sumWithoutCarrybit = num1^num2;</span><br><span class="line">          <span class="keyword">int</span> carryBit = (num1&amp;num2)&lt;&lt;<span class="number">1</span>;</span><br><span class="line">          num1 = sumWithoutCarrybit;</span><br><span class="line">          num2 = carryBit;</span><br><span class="line">        &#125;<span class="keyword">while</span>(num2!=<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> num1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/03/18/algorithm-by-java/17.jpg" alt="result"></p>
-<h2 id="2-操作给定的二叉树，将其变换为源二叉树的镜像。"><a href="#2-操作给定的二叉树，将其变换为源二叉树的镜像。" class="headerlink" title="2.操作给定的二叉树，将其变换为源二叉树的镜像。"></a>2.操作给定的二叉树，将其变换为源二叉树的镜像。</h2><ul>
+<h2 id="操作给定的二叉树，将其变换为源二叉树的镜像。"><a href="#操作给定的二叉树，将其变换为源二叉树的镜像。" class="headerlink" title="操作给定的二叉树，将其变换为源二叉树的镜像。"></a>操作给定的二叉树，将其变换为源二叉树的镜像。</h2><ul>
 <li>输入描述:<br>二叉树的镜像定义：源二叉树</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    8</span><br><span class="line">   /  \</span><br><span class="line">  6   10</span><br><span class="line"> / \  / \</span><br><span class="line">5  7 9 11</span><br><span class="line">镜像二叉树</span><br><span class="line">    8</span><br><span class="line">   /  \</span><br><span class="line">  10   6</span><br><span class="line"> / \  / \</span><br><span class="line">11 9 7  5</span><br></pre></td></tr></table></figure>
@@ -362,7 +362,7 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">JumpFloorII</span><span class="params">(<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(target==<span class="number">0</span>||target==<span class="number">1</span>||target==<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> target;</span><br><span class="line">        <span class="keyword">if</span>(target&lt;<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>*JumpFloorII(target-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="构建乘积数组—给定一个数组A-0-1-…-n-1-请构建一个数组B-0-1-…-n-1-其中B中的元素B-i-A-0-A-1-…A-i-1-A-i-1-…A-n-1-。不能使用除法。"><a href="#构建乘积数组—给定一个数组A-0-1-…-n-1-请构建一个数组B-0-1-…-n-1-其中B中的元素B-i-A-0-A-1-…A-i-1-A-i-1-…A-n-1-。不能使用除法。" class="headerlink" title="构建乘积数组—给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…A[i-1]A[i+1]…A[n-1]。不能使用除法。"></a>构建乘积数组—给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]</em>A[i+1]<em>…</em>A[n-1]。不能使用除法。</h2><ul>
+<h2 id="构建乘积数组—给定一个数组A-0-1-…-n-1-请构建一个数组B-0-1-…-n-1-其中B中的元素B-i-A-0-A-1-…-A-i-1-A-i-1-…-A-n-1-。不能使用除法。"><a href="#构建乘积数组—给定一个数组A-0-1-…-n-1-请构建一个数组B-0-1-…-n-1-其中B中的元素B-i-A-0-A-1-…-A-i-1-A-i-1-…-A-n-1-。不能使用除法。" class="headerlink" title="构建乘积数组—给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…_A[i-1]_A[i+1]_…_A[n-1]。不能使用除法。"></a>构建乘积数组—给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…_A[i-1]_A[i+1]_…_A[n-1]。不能使用除法。</h2><ul>
 <li>目前做的这点算法题，有两大类，一种为基础数据类型操作，另一种为我感觉更有点像数学题，需要总结归纳。</li>
 </ul>
 <ul>
@@ -559,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#记录、积累"><span class="nav-number">1.</span> <span class="nav-text">记录、积累</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-写一个函数，求两个整数之和，要求在函数体内不得使用-、-、-、-四则运算符号。"><span class="nav-number">1.1.</span> <span class="nav-text">1.写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-操作给定的二叉树，将其变换为源二叉树的镜像。"><span class="nav-number">1.2.</span> <span class="nav-text">2.操作给定的二叉树，将其变换为源二叉树的镜像。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。"><span class="nav-number">1.3.</span> <span class="nav-text">一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建乘积数组—给定一个数组A-0-1-…-n-1-请构建一个数组B-0-1-…-n-1-其中B中的元素B-i-A-0-A-1-…A-i-1-A-i-1-…A-n-1-。不能使用除法。"><span class="nav-number">1.4.</span> <span class="nav-text">构建乘积数组—给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…A[i-1]A[i+1]…A[n-1]。不能使用除法。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#记录、积累"><span class="nav-number">1.</span> <span class="nav-text">记录、积累</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个函数，求两个整数之和，要求在函数体内不得使用-、-、-、-四则运算符号。"><span class="nav-number">1.1.</span> <span class="nav-text">写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作给定的二叉树，将其变换为源二叉树的镜像。"><span class="nav-number">1.2.</span> <span class="nav-text">操作给定的二叉树，将其变换为源二叉树的镜像。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。"><span class="nav-number">1.3.</span> <span class="nav-text">一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建乘积数组—给定一个数组A-0-1-…-n-1-请构建一个数组B-0-1-…-n-1-其中B中的元素B-i-A-0-A-1-…-A-i-1-A-i-1-…-A-n-1-。不能使用除法。"><span class="nav-number">1.4.</span> <span class="nav-text">构建乘积数组—给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…_A[i-1]_A[i+1]_…_A[n-1]。不能使用除法。</span></a></li></ol></li></ol></div>
             
 
           </div>
