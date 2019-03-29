@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-29T02:05:41.237Z</updated>
+  <updated>2019-03-29T02:17:12.655Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iterm2分屏快捷键</title>
+    <link href="http://yoursite.com/2019/03/29/iterm2%E5%88%86%E5%B1%8F%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/03/29/iterm2分屏快捷键/</id>
+    <published>2019-03-29T02:10:36.000Z</published>
+    <updated>2019-03-29T02:17:12.655Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>最近发现terminal在多标签页下同时处理一些问题，可视效果不是太好，切换使用<strong> iTerm2</strong> 感觉很爽，整理一些分屏的快捷键。</li></ul><table><thead><tr><th style="text-align:center">组合键</th><th style="text-align:center">作用</th></tr></thead><tbody><tr><td style="text-align:center">command + t</td><td style="text-align:center">新建窗口</td></tr><tr><td style="text-align:center">command + d</td><td style="text-align:center">垂直分屏，</td></tr><tr><td style="text-align:center">command + shift + d</td><td style="text-align:center">水平分屏。</td></tr><tr><td style="text-align:center">command + ] 和command + [</td><td style="text-align:center">在最近使用的分屏直接切换.</td></tr><tr><td style="text-align:center">command + alt + 方向键</td><td style="text-align:center">切换到指定位置的分屏。</td></tr><tr><td style="text-align:center">command + 数字</td><td style="text-align:center">切换标签页。</td></tr><tr><td style="text-align:center">command + 方向键</td><td style="text-align:center">按方向切换标签页。</td></tr><tr><td style="text-align:center">shift + command + s</td><td style="text-align:center">保存当前窗口快照。</td></tr><tr><td style="text-align:center">command + alt + b</td><td style="text-align:center">快照回放。很有意思的功能，你可以对你的操作根据时间轴进行回放。可以拖动下方的时间轴，也可以按左右方向键</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;最近发现terminal在多标签页下同时处理一些问题，可视效果不是太好，切换使用&lt;strong&gt; iTerm2&lt;/strong&gt; 感觉很爽，整理一些分屏的快捷键。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-a
+      
+    
+    </summary>
+    
+    
+      <category term="iterm2" scheme="http://yoursite.com/tags/iterm2/"/>
+    
+      <category term="分屏" scheme="http://yoursite.com/tags/%E5%88%86%E5%B1%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>algorithm by java</title>
