@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-29T02:41:54.801Z</updated>
+  <updated>2019-03-30T09:34:36.296Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>错题记录</title>
+    <link href="http://yoursite.com/2019/03/30/%E9%94%99%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2019/03/30/错题记录/</id>
+    <published>2019-03-30T09:32:45.000Z</published>
+    <updated>2019-03-30T09:34:36.296Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="读程序"><a href="#读程序" class="headerlink" title="读程序"></a>读程序</h2><ul><li>这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Value</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> i=<span class="number">15</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String argv[])</span></span>&#123;</span><br><span class="line">        Test t=<span class="keyword">new</span> Test( );</span><br><span class="line">        t.first( );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">first</span><span class="params">( )</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">5</span>;</span><br><span class="line">    Value v=<span class="keyword">new</span> Value( );</span><br><span class="line">    v.i=<span class="number">25</span>;</span><br><span class="line">    second(v,i);</span><br><span class="line">    System.out.println(v.i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">second</span><span class="params">(Value v,<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    i = <span class="number">0</span>;</span><br><span class="line">    v.i = <span class="number">20</span>;</span><br><span class="line">    Value val = <span class="keyword">new</span> Value( );</span><br><span class="line">    v = val;</span><br><span class="line">    System.out.println(v.i+<span class="string">" "</span>+i);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;读程序&quot;&gt;&lt;a href=&quot;#读程序&quot; class=&quot;headerlink&quot; title=&quot;读程序&quot;&gt;&lt;/a&gt;读程序&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+    
+      <category term="错题" scheme="http://yoursite.com/tags/%E9%94%99%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>iterm2快捷键</title>
