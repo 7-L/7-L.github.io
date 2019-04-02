@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-01T08:25:16.277Z</updated>
+  <updated>2019-04-02T02:10:01.963Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>atom快捷键</title>
+    <link href="http://yoursite.com/2019/04/02/atom%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/04/02/atom快捷键/</id>
+    <published>2019-04-02T02:09:25.000Z</published>
+    <updated>2019-04-02T02:10:01.963Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="atom" scheme="http://yoursite.com/tags/atom/"/>
+    
+      <category term="快捷键" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>排序算法总结</title>
