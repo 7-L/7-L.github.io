@@ -90,7 +90,7 @@
 <meta property="og:description" content="读程序 这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。  12345678910111213141516171819202122232425class Value&amp;#123;    public int i=15;&amp;#125;public class Test&amp;#123;    public static void main(String argv[])&amp;#123;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/paramChange.png">
-<meta property="og:updated_time" content="2019-03-30T09:37:23.437Z">
+<meta property="og:updated_time" content="2019-04-02T07:21:30.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错题记录">
 <meta name="twitter:description" content="读程序 这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。  12345678910111213141516171819202122232425class Value&amp;#123;    public int i=15;&amp;#125;public class Test&amp;#123;    public static void main(String argv[])&amp;#123;">
@@ -341,6 +341,18 @@
 </li>
 <li>答案揭晓，<strong>A</strong>。直接看图吧<br><img src="/2019/03/30/错题记录/paramChange.png" alt="paramChange"></li>
 </ul>
+<h2 id="另一个读程序"><a href="#另一个读程序" class="headerlink" title="另一个读程序"></a>另一个读程序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">foo</span><span class="params">(<span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.print(c);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] argv )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> ( foo(<span class="string">'A'</span>); foo(<span class="string">'B'</span>) &amp;&amp; (i &lt; <span class="number">2</span>); foo(<span class="string">'C'</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            i++ ;</span><br><span class="line">            foo(<span class="string">'D'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出<code>ABDCBDCB</code></p>
+</blockquote>
+<ul>
+<li>解析</li>
+</ul>
+<blockquote>
+<p>for(条件1;条件2;条件3) {<br>    //语句<br>}</p>
+</blockquote>
+<p>执行顺序是条件1-&gt;条件2-&gt;语句-&gt;条件3-&gt;条件2-&gt;语句-&gt;条件3-&gt;条件2……..<br>如果条件2为true，则一直执行。如果条件2位false，则for循环结束</p>
+<hr>
 
       
     </div>
@@ -523,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读程序"><span class="nav-number">1.</span> <span class="nav-text">读程序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读程序"><span class="nav-number">1.</span> <span class="nav-text">读程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一个读程序"><span class="nav-number">2.</span> <span class="nav-text">另一个读程序</span></a></li></ol></div>
             
 
           </div>
