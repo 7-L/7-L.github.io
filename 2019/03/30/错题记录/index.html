@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/paramChange.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/0-1-2.png">
-<meta property="og:updated_time" content="2019-04-03T06:46:31.464Z">
+<meta property="og:updated_time" content="2019-04-03T06:55:45.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错题记录">
 <meta name="twitter:description" content="读程序 这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。  12345678910111213141516171819202122232425class Value&amp;#123;    public int i=15;&amp;#125;public class Test&amp;#123;    public static void main(String argv[])&amp;#123;">
@@ -358,6 +358,12 @@
 <ul>
 <li>解答：每个线程对a 均做了两次读写操作，分别是 “ +1 ” 和 “ -2 ”<br>而题目问了是最终a 的结果，所以 a 的结果取决于各自线程对 a 的先后读写的顺序<br>结论：a的可能取值为-1、0、-2<br><img src="/2019/03/30/错题记录/0-1-2.png" alt="0-1-2"></li>
 </ul>
+<hr>
+<h2 id="以下代码的输出结果为："><a href="#以下代码的输出结果为：" class="headerlink" title="以下代码的输出结果为："></a>以下代码的输出结果为：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> B t1 = <span class="keyword">new</span> B();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> B t2 = <span class="keyword">new</span> B();</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"构造块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"静态块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        B t = <span class="keyword">new</span> B();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>阿里的一道笔试题。最后打印出什么呢？</p>
+<blockquote>
+<p>静态块：用static申明，JVM加载类时执行，仅执行一次<br><br>构造块：类中直接用{}定义，每一次创建对象时执行<br><br>执行顺序优先级：静态块&gt;main()&gt;构造块&gt;构造方法<br><br>静态块按照申明顺序执行，所以先执行publicstaticB t1 = newB();该语句创建对象，则又会调用构造块，输出构造块<br><br>接着执行public static B t1 = new B();输出构造块<br>再执行<br><br>static<br><br>{<br><br>System.out.println(“静态块”);<br><br>}<br>输出静态块<br>最后main方法执行，创建对象，输出构造块。</p>
+</blockquote>
 
       
     </div>
@@ -540,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读程序"><span class="nav-number">1.</span> <span class="nav-text">读程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一个读程序"><span class="nav-number">2.</span> <span class="nav-text">另一个读程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设-a-是一个由线程-1-和线程-2-共享的初始值为-0-的全局变量，则线程-1-和线程-2-同时执行下面的代码，最终-a-的结果不可能是（）"><span class="nav-number">3.</span> <span class="nav-text">假设 a 是一个由线程 1 和线程 2 共享的初始值为 0 的全局变量，则线程 1 和线程 2 同时执行下面的代码，最终 a 的结果不可能是（）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读程序"><span class="nav-number">1.</span> <span class="nav-text">读程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一个读程序"><span class="nav-number">2.</span> <span class="nav-text">另一个读程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设-a-是一个由线程-1-和线程-2-共享的初始值为-0-的全局变量，则线程-1-和线程-2-同时执行下面的代码，最终-a-的结果不可能是（）"><span class="nav-number">3.</span> <span class="nav-text">假设 a 是一个由线程 1 和线程 2 共享的初始值为 0 的全局变量，则线程 1 和线程 2 同时执行下面的代码，最终 a 的结果不可能是（）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以下代码的输出结果为："><span class="nav-number">4.</span> <span class="nav-text">以下代码的输出结果为：</span></a></li></ol></div>
             
 
           </div>
