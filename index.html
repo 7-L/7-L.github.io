@@ -1387,6 +1387,15 @@ is-a   一般是继承关系
 <h4 id="字符流和字节流区分"><a href="#字符流和字节流区分" class="headerlink" title="字符流和字节流区分"></a>字符流和字节流区分</h4><ul>
 <li>stream结尾都是字节流，reader和writer结尾都是字符流 两者的区别就是读写的时候一个是按字节读写，一个是按字符。 实际使用通常差不多。 在读写文件需要对内容按行处理，比如比较特定字符，处理某一行数据的时候一般会选择字符流。 只是读写文件，和文件内容无关的，一般选择字节流。</li>
 </ul>
+<h4 id="优化Hibernate的鼓励措施"><a href="#优化Hibernate的鼓励措施" class="headerlink" title="优化Hibernate的鼓励措施"></a>优化Hibernate的鼓励措施</h4><ol>
+<li>尽量使用many-to-one，避免使用单项one-to-many</li>
+<li>灵活使用单向one-to-many</li>
+<li>不用一对一，使用多对一代替一对一</li>
+<li>配置对象缓存，不使用集合缓存</li>
+<li>一对多使用Bag 多对一使用Set</li>
+<li>继承使用显示多态 HQL:from object polymorphism=”exlicit” 避免查处所有对象</li>
+<li>消除大表，使用二级缓存</li>
+</ol>
 
           
         
