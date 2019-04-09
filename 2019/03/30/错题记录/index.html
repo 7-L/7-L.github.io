@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/paramChange.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/0-1-2.png">
-<meta property="og:updated_time" content="2019-04-09T06:13:48.597Z">
+<meta property="og:updated_time" content="2019-04-09T06:14:08.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错题记录">
 <meta name="twitter:description" content="读程序 这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。  12345678910111213141516171819202122232425class Value&amp;#123;    public int i=15;&amp;#125;public class Test&amp;#123;    public static void main(String argv[])&amp;#123;">
@@ -382,6 +382,7 @@
 <p>再看init()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ThreadGroup g, Runnable target,String name,<span class="keyword">long</span> stackSize)</span> </span>&#123;</span><br><span class="line">        init(g, target, name, stackSize, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>在init(g, target, name, stackSize, null)，可以找到this.target = target;<br>此时进行了初始化。</p>
 <p>最后说一说，Thread 的执行过程，Theard的启动方法是start().线程类调用start();然后执行start0()本地方法，然后就没办法再追溯下去了。<br>start我听过别人说，是一个准备工作（比如你要吃苹果，不得先洗一下，真正吃时间是洗完后），并没有获得cpu，调用run()才是获得了cpu。</p>
+<hr>
 
       
     </div>
