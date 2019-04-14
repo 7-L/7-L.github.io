@@ -825,6 +825,13 @@
 <p>在init(g, target, name, stackSize, null)，可以找到this.target = target;<br>此时进行了初始化。</p>
 <p>最后说一说，Thread 的执行过程，Theard的启动方法是start().线程类调用start();然后执行start0()本地方法，然后就没办法再追溯下去了。<br>start我听过别人说，是一个准备工作（比如你要吃苹果，不得先洗一下，真正吃时间是洗完后），并没有获得cpu，调用run()才是获得了cpu。</p>
 <hr>
+<ul>
+<li><p>接着读！这道题主要是理解区别String和StringBuffer传递区别，其中String为<strong>值传递</strong>，StringBuffer为<strong>引用传递</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    StringBuffer a = <span class="keyword">new</span> StringBuffer(<span class="string">"A"</span>);</span><br><span class="line">    StringBuffer b = <span class="keyword">new</span> StringBuffer(<span class="string">"B"</span>);</span><br><span class="line">    operator(a, b);</span><br><span class="line">    System.out.println(a + <span class="string">","</span> + b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">operator</span><span class="params">(StringBuffer x, StringBuffer y)</span> </span>&#123;</span><br><span class="line">    x.append(y); y = x;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果应该为<code>AB,B</code>,粗略画一个图理解一下</p>
+</li>
+</ul>
 
           
         
