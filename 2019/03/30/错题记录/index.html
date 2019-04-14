@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/paramChange.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/0-1-2.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/30/错题记录/abb.png">
-<meta property="og:updated_time" content="2019-04-14T06:22:18.834Z">
+<meta property="og:updated_time" content="2019-04-14T07:27:29.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错题记录">
 <meta name="twitter:description" content="读程序 这道题真的很不错，错两遍了😂，还是记录一下吧，以防又掉坑里。  12345678910111213141516171819202122232425class Value&amp;#123;    public int i=15;&amp;#125;public class Test&amp;#123;    public static void main(String argv[])&amp;#123;">
@@ -389,6 +389,21 @@
 </ul>
 <p><img src="/2019/03/30/错题记录/abb.png" alt="abb"></p>
 <hr>
+<ul>
+<li><p>WEB开发中实现会话跟踪的技术总结</p>
+</li>
+<li><p>HTTP是“无状态”协议：客户程序每次读取 Web 页面，都打开到 Web 服务器的单独的连接，并且，服务器也不自动维护客户的上下文信息。即使那些支持持续性 HTTP 连接的服务器，尽管多个客户请求连续发生且间隔很短时它们会保持 socket 打开，但是，它们也没有提供维护上下文信息的内建支持。上下文的缺失引起许多困难。例如，在线商店的客户向他们的购物车中加入商品时，服务器如何知道购物车中己有何种物品呢？类似地，在客户决定结账时，服务器如何能确定之前创建的购物车中哪个属于此客户呢？这些问题虽然看起来十分简单，但是由于 HTTP 的不足，解答它们却异常复杂困难。对于这个问题，存在 3 种典型的解决方案：</p>
+</li>
+</ul>
+<blockquote>
+<p>Cookie（结合session使用）<br><br>可以使用 cookie 存储购物会话的 ID；在后续连接中，取出当前的会话 ID，并使用这个 ID 从服务器上的查找表（lookup table）中提取出会话的相关信息。 以这种方式使用 cookie 是一种绝佳的解决方案，也是在处理会话时最常使用的方式。但是，sevlet 中最好有一种高级的 API 来处理所有这些任务，以及下面这些冗长乏味的任务：从众多的其他cookie中（毕竟可能会存在许多cookie）提取出存储会话标识符的 cookie；确定空闲会话什么时候过期，并回收它们；将散列表与每个请求关联起来；生成惟一的会话标识符。</p>
+</blockquote>
+<blockquote>
+<p>URL 重写<br><br>采用这种方式时，客户程序在每个URL的尾部添加一些额外数据。这些数据标识当前的会话，服务器将这个标识符与它存储的用户相关数据关联起来。 URL重写是比较不错的会话跟踪解决方案，即使浏览器不支持 cookie 或在用户禁用 cookie 的情况下，这种方案也能够工作。URL 重写具有 cookie 所具有的同样缺点，也就是说，服务器端程序要做许多简单但是冗长乏味的处理任务。即使有高层的 API 可以处理大部分的细节，仍须十分小心每个引用你的站点的 URL ，以及那些返回给用户的 URL。即使通过间接手段，比如服务器重定向中的 Location 字段，都要添加额外的信息。这种限制意味着，在你的站点上不能有任何静态 HTML 页面（至少静态页面中不能有任何链接到站点动态页面的链接）。因此，每个页面都必须使用 servlet 或 JSP 动态生成。即使所有的页面都动态生成，如果用户离开了会话并通过书签或链接再次回来，会话的信息也会丢失，因为存储下来的链接含有错误的标识信息。</p>
+</blockquote>
+<blockquote>
+<p>隐藏的表单域<br><br>HTML 表单中可以含有如下的条目：<input type="hidden" name="session" value="a1234"><br>这个条目的意思是：在提交表单时，要将指定的名称和值自动包括在 GET 或 POST 数据中。这个隐藏域可以用来存储有关会话的信息，但它的主要缺点是：仅当每个页面都是由表单提交而动态生成时，才能使用这种方法。单击常规的超文本链接并不产生表单提交，因此隐藏的表单域不能支持通常的会话跟踪，只能用于一系列特定的操作中，比如在线商店的结账过程。</p>
+</blockquote>
 
       
     </div>
