@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="h7lyaphets">
 <meta property="og:description" content="什么是AOPAOP（Aspect-OrientedProgramming，面向方面编程），可以说是OOP（Object-Oriented Programing，面向对象编程）的补充和完善。OOP引入封装、继承和多态性等概念来建立一种对象层次结构，用以模拟公共行为的一个集合。当我们需要为分散的对象引入公共行为的时候，OOP则显得无能为力。也就是说，OOP允许你定义从上到下的关系，但并不适合定义从左到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T12:03:35.279Z">
+<meta property="og:updated_time" content="2019-04-24T12:33:29.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring AOP实现原理">
 <meta name="twitter:description" content="什么是AOPAOP（Aspect-OrientedProgramming，面向方面编程），可以说是OOP（Object-Oriented Programing，面向对象编程）的补充和完善。OOP引入封装、继承和多态性等概念来建立一种对象层次结构，用以模拟公共行为的一个集合。当我们需要为分散的对象引入公共行为的时候，OOP则显得无能为力。也就是说，OOP允许你定义从上到下的关系，但并不适合定义从左到">
@@ -367,6 +367,7 @@
 </ol>
 <p>也可以直接使用ProxyFactory来以编程的方式使用Spring AOP，通过ProxyFactory提供的方法可以设置target对象, advisor等相关配置，最终通过 getProxy()方法来获取代理对象</p>
 <p>具体使用的示例可以google. 这里略去</p>
+<h2 id="Spring-AOP代理对象的生成"><a href="#Spring-AOP代理对象的生成" class="headerlink" title="Spring AOP代理对象的生成"></a>Spring AOP代理对象的生成</h2><p>Spring提供了两种方式来生成代理对象: JDKProxy和Cglib，具体使用哪种方式生成由AopProxyFactory根据AdvisedSupport对象的配置来决定。默认的策略是如果目标类是接口，则使用JDK动态代理技术，否则使用Cglib来生成代理。下面我们来研究一下Spring如何使用JDK来生成代理对象，具体的生成代码放在JdkDynamicAopProxy这个类中，直接上相关代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -547,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AOP"><span class="nav-number">1.</span> <span class="nav-text">什么是AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP使用场景"><span class="nav-number">2.</span> <span class="nav-text">AOP使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP相关概念"><span class="nav-number">3.</span> <span class="nav-text">AOP相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用Spring-AOP"><span class="nav-number">4.</span> <span class="nav-text">如何使用Spring AOP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AOP"><span class="nav-number">1.</span> <span class="nav-text">什么是AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP使用场景"><span class="nav-number">2.</span> <span class="nav-text">AOP使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP相关概念"><span class="nav-number">3.</span> <span class="nav-text">AOP相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用Spring-AOP"><span class="nav-number">4.</span> <span class="nav-text">如何使用Spring AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-AOP代理对象的生成"><span class="nav-number">5.</span> <span class="nav-text">Spring AOP代理对象的生成</span></a></li></ol></div>
             
 
           </div>
