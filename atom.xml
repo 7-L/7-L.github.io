@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-17T07:10:07.489Z</updated>
+  <updated>2019-06-17T07:12:25.538Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://yoursite.com/2019/06/17/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <id>http://yoursite.com/2019/06/17/java基本数据结构/</id>
     <published>2019-06-17T06:50:50.000Z</published>
-    <updated>2019-06-17T07:10:07.489Z</updated>
+    <updated>2019-06-17T07:12:25.538Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2019/06/17/java基本数据结构/all.png" alt="all"></p><h5 id="collection接口中包含以下几种接口"><a href="#collection接口中包含以下几种接口" class="headerlink" title="collection接口中包含以下几种接口"></a>collection接口中包含以下几种接口</h5><ol><li>list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。</li><li>Set接口：内容不允许重复。</li><li>Queue接口：队列接口。</li><li>sortedSet接口：单值排序接口。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2019/06/17/java基本数据结构/all.png" alt="all"></p><h5 id="Collection接口中包含以下几种接口"><a href="#Collection接口中包含以下几种接口" class="headerlink" title="Collection接口中包含以下几种接口"></a>Collection接口中包含以下几种接口</h5><ol><li>list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。</li><li>Set接口：内容不允许重复。</li><li>Queue接口：队列接口。</li><li>sortedSet接口：单值排序接口。</li></ol><h5 id="Map接口中包含以下几种接口"><a href="#Map接口中包含以下几种接口" class="headerlink" title="Map接口中包含以下几种接口"></a>Map接口中包含以下几种接口</h5><ol><li>HashMap接口：无序存放，key不允许重复</li><li>HashTable接口：无序存放，key不允许重复</li><li>TreeMap接口：按key排序，key不重复</li><li>IdentityHashMap接口：key可重复</li><li>WeakHashMap接口：弱引用Map集合</li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;&lt;img src=&quot;/2019/06/17/java基本数据结构/all.png&quot; alt=&quot;all&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;collection接口中包含以下几种接口&quot;&gt;&lt;a href=&quot;#collection接口中包含以下几种接口&quot; class=&quot;headerlin
+&lt;h5 id=&quot;Collection接口中包含以下几种接口&quot;&gt;&lt;a href=&quot;#Collection接口中包含以下几种接口&quot; class=&quot;headerlin
       
     
     </summary>
