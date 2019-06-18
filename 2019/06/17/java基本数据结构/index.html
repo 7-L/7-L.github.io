@@ -81,20 +81,21 @@
 
 
 
-<meta name="description" content="架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值排序接口。  Map接口中包含以下几种接口 HashMap接口：无序存放，key不允许重复 HashTable接口：无序">
+<meta name="description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值">
 <meta name="keywords" content="java,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基本数据结构">
 <meta property="og:url" content="http://yoursite.com/2019/06/17/java基本数据结构/index.html">
 <meta property="og:site_name" content="h7lyaphets">
-<meta property="og:description" content="架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值排序接口。  Map接口中包含以下几种接口 HashMap接口：无序存放，key不允许重复 HashTable接口：无序">
+<meta property="og:description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/all.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/all2.png">
-<meta property="og:updated_time" content="2019-06-17T10:26:25.627Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/hashmapput.png">
+<meta property="og:updated_time" content="2019-06-18T07:35:37.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基本数据结构">
-<meta name="twitter:description" content="架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值排序接口。  Map接口中包含以下几种接口 HashMap接口：无序存放，key不允许重复 HashTable接口：无序">
+<meta name="twitter:description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值">
 <meta name="twitter:image" content="http://yoursite.com/2019/06/17/java基本数据结构/all.png">
 
 
@@ -331,7 +332,11 @@
       
 
       
-        <p><img src="/2019/06/17/java基本数据结构/all.png" alt="all"></p>
+        <ul>
+<li>来源1<a href="https://mp.weixin.qq.com/s/5Uum_4B4n3QooRYKrLbZXg" target="_blank" rel="noopener">搞不懂 HashMap？只因你缺一个 HashMap 的流程图！</a></li>
+<li>来源2<a href="http://www.importnew.com/31278.html" target="_blank" rel="noopener">HashMap？面试？我是谁？我在哪</a></li>
+</ul>
+<p><img src="/2019/06/17/java基本数据结构/all.png" alt="all"></p>
 <ul>
 <li>架构图</li>
 </ul>
@@ -349,7 +354,8 @@
 <li>IdentityHashMap接口：key可重复</li>
 <li>WeakHashMap接口：弱引用Map集合</li>
 </ol>
-<h5 id="详解HashMap"><a href="#详解HashMap" class="headerlink" title="详解HashMap"></a>详解HashMap</h5>
+<h5 id="详解HashMap"><a href="#详解HashMap" class="headerlink" title="详解HashMap"></a>详解HashMap</h5><p>面试的时候，HashMap 基本上是必问的知识点。<br><br>很多人在回答的时候，照本宣科。HashMap 根据键的 hashCode 值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。HashMap 最多只允许一条记录的键为 null，允许多条记录的值为 null。HashMap 非线程安全，即任一时刻可以有多个线程同时写 HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections 的synchronizedMap 方法使 HashMap 具有线程安全的能力，或者使用 ConcurrentHashMap。<br><img src="/2019/06/17/java基本数据结构/hashmapput.png" alt="hashmapput"></p>
+
       
     </div>
     
