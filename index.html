@@ -484,6 +484,12 @@
 <p>④.判断 table[i] 是否为 treeNode，即 table[i] 是否是红黑树，如果是红黑树，则直接在树中插入键值对，否则转向⑤；</p>
 <p>⑤.遍历 table[i]，判断链表长度是否大于8，大于8的话把链表转换为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作；遍历过程中若发现 key 已经存在直接覆盖 value 即可；</p>
 <p>⑥.插入成功后，判断实际存在的键值对数量size是否超多了最大容量 threshold，如果超过，进行扩容。</p>
+<h6 id="为什么用HashMap"><a href="#为什么用HashMap" class="headerlink" title="为什么用HashMap"></a>为什么用HashMap</h6><ul>
+<li>HashMap 是一个散列桶（数组和链表），它存储的内容是键值对 key-value 映射</li>
+<li>HashMap 采用了数组和链表的数据结构，能在查询和修改方便继承了数组的线性查找和链表的寻址修改</li>
+<li>HashMap 是非 synchronized，所以 HashMap 很快</li>
+<li>HashMap 可以接受 null 键和值，而 Hashtable 则不能（原因就是 equlas() 方法需要对象，因为 HashMap 是后出的 API 经过处理才可以）</li>
+</ul>
 
           
         
