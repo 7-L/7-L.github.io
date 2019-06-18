@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/all.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/all2.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/hashmapput.png">
-<meta property="og:updated_time" content="2019-06-18T07:35:37.657Z">
+<meta property="og:updated_time" content="2019-06-18T07:56:17.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基本数据结构">
 <meta name="twitter:description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值">
@@ -355,6 +355,13 @@
 <li>WeakHashMap接口：弱引用Map集合</li>
 </ol>
 <h5 id="详解HashMap"><a href="#详解HashMap" class="headerlink" title="详解HashMap"></a>详解HashMap</h5><p>面试的时候，HashMap 基本上是必问的知识点。<br><br>很多人在回答的时候，照本宣科。HashMap 根据键的 hashCode 值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。HashMap 最多只允许一条记录的键为 null，允许多条记录的值为 null。HashMap 非线程安全，即任一时刻可以有多个线程同时写 HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections 的synchronizedMap 方法使 HashMap 具有线程安全的能力，或者使用 ConcurrentHashMap。<br><img src="/2019/06/17/java基本数据结构/hashmapput.png" alt="hashmapput"></p>
+<p>简单的来说，可以用下面几句话总结！</p>
+<p>①.判断键值对数组 table[i] 是否为空或为 null，否则执行 resize() 进行扩容；</p>
+<p>②.根据键值 key 计算 hash 值得到插入的数组索引 i，如果 table[i]==null，直接新建节点添加，转向⑥，如果 table[i] 不为空，转向③；</p>
+<p>③.判断 table[i] 的首个元素是否和 key 一样，如果相同直接覆盖 value，否则转向④，这里的相同指的是 hashCode 以及 equals；</p>
+<p>④.判断 table[i] 是否为 treeNode，即 table[i] 是否是红黑树，如果是红黑树，则直接在树中插入键值对，否则转向⑤；</p>
+<p>⑤.遍历 table[i]，判断链表长度是否大于8，大于8的话把链表转换为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作；遍历过程中若发现 key 已经存在直接覆盖 value 即可；</p>
+<p>⑥.插入成功后，判断实际存在的键值对数量size是否超多了最大容量 threshold，如果超过，进行扩容。</p>
 
       
     </div>
