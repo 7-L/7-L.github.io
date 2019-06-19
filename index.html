@@ -490,6 +490,11 @@
 <li>HashMap 是非 synchronized，所以 HashMap 很快</li>
 <li>HashMap 可以接受 null 键和值，而 Hashtable 则不能（原因就是 equlas() 方法需要对象，因为 HashMap 是后出的 API 经过处理才可以）</li>
 </ul>
+<h6 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h6><p>HashMap 是基于 hashing 的原理</p>
+<p>我们使用 put(key, value) 存储对象到 HashMap 中，使用 get(key) 从 HashMap 中获取对象。当我们给 put() 方法传递键和值时，我们先对键调用 hashCode() 方法，计算并返回的 hashCode 是用于找到 Map 数组的 bucket 位置来储存 Node 对象。</p>
+<p>这里关键点在于指出，HashMap 是在 bucket 中储存键对象和值对象，作为Map.Node 。</p>
+<p><img src="/2019/06/17/java基本数据结构/mapnode.png" alt="mapnode"><br>以下是 HashMap 初始化</p>
+<p>简化的模拟数据结构：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Node[] table = <span class="keyword">new</span> Node[<span class="number">16</span>]; <span class="comment">// 散列桶初始化，table</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    hash; <span class="comment">//hash值</span></span><br><span class="line">    key; <span class="comment">//键</span></span><br><span class="line">    value; <span class="comment">//值</span></span><br><span class="line">    node next; <span class="comment">//用于指向链表的下一层（产生冲突，用拉链法）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
