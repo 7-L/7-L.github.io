@@ -93,7 +93,8 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/all2.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/hashmapput.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/mapnode.png">
-<meta property="og:updated_time" content="2019-06-19T01:51:12.195Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/mapbucket.png">
+<meta property="og:updated_time" content="2019-06-19T02:06:04.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基本数据结构">
 <meta name="twitter:description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接口：队列接口。 sortedSet接口：单值">
@@ -386,6 +387,7 @@
 <p>以下是具体 get 过程</p>
 <p><strong>考虑特殊情况</strong>：如果两个键的 hashcode 相同，你如何获取值对象？</p>
 <p>当我们调用 get() 方法，HashMap 会使用键对象的 hashcode 找到 bucket 位置，找到 bucket 位置之后，会调用 keys.equals() 方法去找到链表中正确的节点，最终找到要找的值对象。</p>
+<p><img src="/2019/06/17/java基本数据结构/mapbucket.png" alt="mapbucket"></p>
 
       
     </div>
