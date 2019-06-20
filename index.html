@@ -514,6 +514,12 @@
 </ul>
 <h6 id="HashMap中hash函数实现方法"><a href="#HashMap中hash函数实现方法" class="headerlink" title="HashMap中hash函数实现方法"></a>HashMap中hash函数实现方法</h6><p>我们可以看到在hashmap中要找到某个元素，需要根据key的hash值来求得对应数组中的位置。如何计算这个位置就是hash算法。前面说过hashmap的数据结构是数组和链表的结合，所以我们当然希望这个hashmap里面的元素位置尽量的分布均匀些，尽量使得每个位置上的元素数量只有一个，那么当我们用hash算法求得这个位置的时候，马上就可以知道对应位置的元素就是我们要的，而不用再去遍历链表。 所以我们首先想到的就是把hashcode对数组长度取模运算，这样一来，元素的分布相对来说是比较均匀的。但是，“模”运算的消耗还是比较大的，能不能找一种更快速，消耗更小的方式，我们来看看JDK1.8的源码是怎么做的（被楼主修饰了一下）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">int</span> h;</span><br><span class="line">     h=key.hashCode()；返回散列值也就是hashcode</span><br><span class="line">      <span class="comment">// ^ ：按位异或</span></span><br><span class="line">      <span class="comment">// &gt;&gt;&gt;:无符号右移，忽略符号位，空位都以0补齐</span></span><br><span class="line">      <span class="comment">//其中n是数组的长度，即Map的数组部分初始化长度</span></span><br><span class="line">     <span class="keyword">return</span>  (n-<span class="number">1</span>)&amp;(h ^ (h &gt;&gt;&gt; <span class="number">16</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/06/17/java基本数据结构/hashcal.png" alt="hashcal"></p>
+<p>简单来说就是</p>
+<ol>
+<li>高16bit不变，低16bit和高16bit做了一个异或(得到的HASHCODE转化为32位的二进制，前16位和后16位低16bit和高16bit做了一个异或)</li>
+<li>(n-1)&amp;hash=-&gt;得到下标</li>
+</ol>
 
           
         
