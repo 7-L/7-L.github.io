@@ -510,6 +510,7 @@
 <p><img src="/2019/06/17/java基本数据结构/mapbucket.png" alt="mapbucket"></p>
 <h6 id="减少碰撞的方法"><a href="#减少碰撞的方法" class="headerlink" title="减少碰撞的方法"></a>减少碰撞的方法</h6><ul>
 <li>扰动函数可以减少碰撞，原理是如果两个不相等的对象返回不同的hashcode的话，那么碰撞的几率就会小些，这就意味着存链表结构减小，这样取值的话就不会频繁调用equal方法，这样就能提高HashMap的性能。（扰动即Hash方法内部的算法实现，目的是让不同对象返回不同hashcode。）</li>
+<li>使用不可变的、声明作final的对象，并且采用合适的equals()和hashCode()方法的话，将会减少碰撞的发生。不可变性使得能够缓存不同键的hashcode，这将提高整个获取对象的速度，使用String，Interger这样的wrapper类作为键是非常好的选择。为什么String, Interger这样的wrapper类适合作为键？因为String是final的，而且已经重写了equals()和hashCode()方法了。不可变性是必要的，因为为了要计算hashCode()，就要防止键值改变，如果键值在放入时和获取时返回不同的hashcode的话，那么就不能从HashMap中找到你想要的对象。</li>
 </ul>
 
           
