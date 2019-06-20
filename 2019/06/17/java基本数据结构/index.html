@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/mapbucket.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/hashcal.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/rbtree.png">
-<meta property="og:updated_time" content="2019-06-20T02:49:44.536Z">
+<meta property="og:updated_time" content="2019-06-20T02:59:56.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基本数据结构">
 <meta name="twitter:description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪 来源3HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接">
@@ -412,6 +412,13 @@
 <li>每个叶子节点都是黑色的空节点（NIL节点）</li>
 <li>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）</li>
 </ol>
+<h6 id="解决hash碰撞还有哪些办法"><a href="#解决hash碰撞还有哪些办法" class="headerlink" title="解决hash碰撞还有哪些办法"></a>解决hash碰撞还有哪些办法</h6><p>开放定址法。</p>
+<p>　　当冲突发生时，使用某种探查技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定的地址。</p>
+<p>　　按照形成探查序列的方法不同，可将开放定址法区分为线性探查法、二次探查法、双重散列法等。</p>
+<p>　　下面给一个线性探查法的例子　　</p>
+<p>　　问题：已知一组关键字为(26，36，41，38，44，15，68，12，06，51)，用除余法构造散列函数，用线性探查法解决冲突构造这组关键字的散列表。</p>
+<p>　　解答：为了减少冲突，通常令装填因子α由除余法因子是13的散列函数计算出的上述关键字序列的散列地址为(0，10，2，12，5，2，3，12，6，12)。</p>
+<p>　    前5个关键字插入时，其相应的地址均为开放地址，故将它们直接插入T[0]，T[10)，T[2]，T[12]和T[5]中。<br>　　当插入第6个关键字15时，其散列地址2(即h(15)=15％13=2)已被关键字41(15和41互为同义词)占用。故探查h1=(2+1)％13=3，此地址开放，所以将15放入T[3]中。<br>　   当插入第7个关键字68时，其散列地址3已被非同义词15先占用，故将其插入到T[4]中。<br>　   当插入第8个关键字12时，散列地址12已被同义词38占用，故探查hl=(12+1)％13=0，而T[0]亦被26占用，再探查h2=(12+2)％13=1，此地址开放，可将12插入其中。<br>　   类似地，第9个关键字06直接插入T[6]中；而最后一个关键字51插人时，因探查的地址12，0，1，…，6均非空，故51插入T[7]中。</p>
 
       
     </div>
@@ -596,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Collection接口中包含以下几种接口"><span class="nav-number">1.</span> <span class="nav-text">Collection接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map接口中包含以下几种接口"><span class="nav-number">2.</span> <span class="nav-text">Map接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#详解HashMap"><span class="nav-number">3.</span> <span class="nav-text">详解HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为什么用HashMap"><span class="nav-number">3.1.</span> <span class="nav-text">为什么用HashMap</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#工作原理"><span class="nav-number">3.2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#减少碰撞的方法"><span class="nav-number">3.3.</span> <span class="nav-text">减少碰撞的方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashMap中hash函数实现方法"><span class="nav-number">3.4.</span> <span class="nav-text">HashMap中hash函数实现方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？"><span class="nav-number">3.5.</span> <span class="nav-text">拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#红黑树的理解"><span class="nav-number">3.6.</span> <span class="nav-text">红黑树的理解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Collection接口中包含以下几种接口"><span class="nav-number">1.</span> <span class="nav-text">Collection接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map接口中包含以下几种接口"><span class="nav-number">2.</span> <span class="nav-text">Map接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#详解HashMap"><span class="nav-number">3.</span> <span class="nav-text">详解HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为什么用HashMap"><span class="nav-number">3.1.</span> <span class="nav-text">为什么用HashMap</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#工作原理"><span class="nav-number">3.2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#减少碰撞的方法"><span class="nav-number">3.3.</span> <span class="nav-text">减少碰撞的方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashMap中hash函数实现方法"><span class="nav-number">3.4.</span> <span class="nav-text">HashMap中hash函数实现方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？"><span class="nav-number">3.5.</span> <span class="nav-text">拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#红黑树的理解"><span class="nav-number">3.6.</span> <span class="nav-text">红黑树的理解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解决hash碰撞还有哪些办法"><span class="nav-number">3.7.</span> <span class="nav-text">解决hash碰撞还有哪些办法</span></a></li></ol></li></ol></div>
             
 
           </div>
