@@ -508,6 +508,9 @@
 <p><strong>考虑特殊情况</strong>：如果两个键的 hashcode 相同，你如何获取值对象？</p>
 <p>当我们调用 get() 方法，HashMap 会使用键对象的 hashcode 找到 bucket 位置，找到 bucket 位置之后，会调用 keys.equals() 方法去找到链表中正确的节点，最终找到要找的值对象。</p>
 <p><img src="/2019/06/17/java基本数据结构/mapbucket.png" alt="mapbucket"></p>
+<h6 id="减少碰撞的方法"><a href="#减少碰撞的方法" class="headerlink" title="减少碰撞的方法"></a>减少碰撞的方法</h6><ul>
+<li>扰动函数可以减少碰撞，原理是如果两个不相等的对象返回不同的hashcode的话，那么碰撞的几率就会小些，这就意味着存链表结构减小，这样取值的话就不会频繁调用equal方法，这样就能提高HashMap的性能。（扰动即Hash方法内部的算法实现，目的是让不同对象返回不同hashcode。）</li>
+</ul>
 
           
         
