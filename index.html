@@ -545,8 +545,21 @@
 <p>　　HashMap的容量是有限的。当经过多次元素插入，使得HashMap达到一定饱和度时，Key映射位置发生冲突的几率会逐渐提高。这时候，HashMap需要扩展它的长度，也就是进行Resize。</p>
 <ol>
 <li>扩容：创建一个新的Entry空数组，长度是原数组的2倍。</li>
-<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。　　</li>
+<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。</li>
 </ol>
+<hr>
+<h5 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h5><ul>
+<li>数组+链表方式存储</li>
+<li>默认容量：11（质数 为宜）</li>
+<li>put:<ul>
+<li>索引计算 : （key.hashCode() &amp; 0x7FFFFFFF）% table.length</li>
+<li>若在链表中找到了，则替换旧值，若未找到则继续</li>
+<li>当总元素个数超过容量*加载因子时，扩容为原来 2 倍并重新散列。</li>
+<li>将新元素加到链表头部</li>
+</ul>
+</li>
+<li>对修改 Hashtable 内部共享数据的方法添加了 synchronized，保证线程安全。　　</li>
+</ul>
 
           
         

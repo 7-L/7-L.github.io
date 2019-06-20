@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/mapbucket.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/hashcal.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/17/java基本数据结构/rbtree.png">
-<meta property="og:updated_time" content="2019-06-20T03:13:04.506Z">
+<meta property="og:updated_time" content="2019-06-20T07:25:12.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基本数据结构">
 <meta name="twitter:description" content="来源1搞不懂 HashMap？只因你缺一个 HashMap 的流程图！ 来源2HashMap？面试？我是谁？我在哪 来源3HashMap？面试？我是谁？我在哪    架构图   Collection接口中包含以下几种接口 list接口：内容允许重复。其中又包含三种数据结构，ArrayList、LindedList（实现了Queue接口），Vector。 Set接口：内容不允许重复。 Queue接">
@@ -427,8 +427,21 @@
 <p>　　HashMap的容量是有限的。当经过多次元素插入，使得HashMap达到一定饱和度时，Key映射位置发生冲突的几率会逐渐提高。这时候，HashMap需要扩展它的长度，也就是进行Resize。</p>
 <ol>
 <li>扩容：创建一个新的Entry空数组，长度是原数组的2倍。</li>
-<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。　　</li>
+<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。</li>
 </ol>
+<hr>
+<h5 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h5><ul>
+<li>数组+链表方式存储</li>
+<li>默认容量：11（质数 为宜）</li>
+<li>put:<ul>
+<li>索引计算 : （key.hashCode() &amp; 0x7FFFFFFF）% table.length</li>
+<li>若在链表中找到了，则替换旧值，若未找到则继续</li>
+<li>当总元素个数超过容量*加载因子时，扩容为原来 2 倍并重新散列。</li>
+<li>将新元素加到链表头部</li>
+</ul>
+</li>
+<li>对修改 Hashtable 内部共享数据的方法添加了 synchronized，保证线程安全。　　</li>
+</ul>
 
       
     </div>
@@ -613,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Collection接口中包含以下几种接口"><span class="nav-number">1.</span> <span class="nav-text">Collection接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map接口中包含以下几种接口"><span class="nav-number">2.</span> <span class="nav-text">Map接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#详解HashMap"><span class="nav-number">3.</span> <span class="nav-text">详解HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为什么用HashMap"><span class="nav-number">3.1.</span> <span class="nav-text">为什么用HashMap</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#工作原理"><span class="nav-number">3.2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#减少碰撞的方法"><span class="nav-number">3.3.</span> <span class="nav-text">减少碰撞的方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashMap中hash函数实现方法"><span class="nav-number">3.4.</span> <span class="nav-text">HashMap中hash函数实现方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？"><span class="nav-number">3.5.</span> <span class="nav-text">拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#红黑树的理解"><span class="nav-number">3.6.</span> <span class="nav-text">红黑树的理解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解决hash碰撞还有哪些办法"><span class="nav-number">3.7.</span> <span class="nav-text">解决hash碰撞还有哪些办法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如果HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办？"><span class="nav-number">3.8.</span> <span class="nav-text">如果HashMap的大小超过了负载因子(load factor)定义的容量，怎么办？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#重新调整HashMap大小存在什么问题吗？"><span class="nav-number">3.9.</span> <span class="nav-text">重新调整HashMap大小存在什么问题吗？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Collection接口中包含以下几种接口"><span class="nav-number">1.</span> <span class="nav-text">Collection接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map接口中包含以下几种接口"><span class="nav-number">2.</span> <span class="nav-text">Map接口中包含以下几种接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#详解HashMap"><span class="nav-number">3.</span> <span class="nav-text">详解HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为什么用HashMap"><span class="nav-number">3.1.</span> <span class="nav-text">为什么用HashMap</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#工作原理"><span class="nav-number">3.2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#减少碰撞的方法"><span class="nav-number">3.3.</span> <span class="nav-text">减少碰撞的方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashMap中hash函数实现方法"><span class="nav-number">3.4.</span> <span class="nav-text">HashMap中hash函数实现方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？"><span class="nav-number">3.5.</span> <span class="nav-text">拉链法导致的链表过深问题为什么不用二叉查找树代替，而选择红黑树？为什么不一直使用红黑树？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#红黑树的理解"><span class="nav-number">3.6.</span> <span class="nav-text">红黑树的理解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解决hash碰撞还有哪些办法"><span class="nav-number">3.7.</span> <span class="nav-text">解决hash碰撞还有哪些办法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如果HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办？"><span class="nav-number">3.8.</span> <span class="nav-text">如果HashMap的大小超过了负载因子(load factor)定义的容量，怎么办？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#重新调整HashMap大小存在什么问题吗？"><span class="nav-number">3.9.</span> <span class="nav-text">重新调整HashMap大小存在什么问题吗？</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HashTable"><span class="nav-number">4.</span> <span class="nav-text">HashTable</span></a></li></ol></div>
             
 
           </div>
