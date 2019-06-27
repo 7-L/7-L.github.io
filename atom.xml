@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-27T02:42:45.986Z</updated>
+  <updated>2019-06-27T03:07:32.535Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://yoursite.com/2019/06/24/Redis/"/>
     <id>http://yoursite.com/2019/06/24/Redis/</id>
     <published>2019-06-24T10:00:44.000Z</published>
-    <updated>2019-06-27T02:42:45.986Z</updated>
+    <updated>2019-06-27T03:07:32.535Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Redis分布式锁如何续期"><a href="#Redis分布式锁如何续期" class="headerlink" title="Redis分布式锁如何续期"></a>Redis分布式锁如何续期</h2><ul><li><a href="https://juejin.im/post/5d122f516fb9a07ed911d08c#comment" target="_blank" rel="noopener">来源</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Redis分布式锁如何续期"><a href="#Redis分布式锁如何续期" class="headerlink" title="Redis分布式锁如何续期"></a>Redis分布式锁如何续期</h2><ul><li><p><a href="https://juejin.im/post/5d122f516fb9a07ed911d08c#comment" target="_blank" rel="noopener">来源</a></p></li><li><p>问题<br><img src="/2019/06/24/Redis/temp.png" alt="question"></p></li><li><p>Redis分布式锁知识</p></li></ul><p>很多同学在用分布式锁时,都是直接百度搜索找一个<code>Redis</code>分布式锁工具类就直接用了.关键是该工具类中还充斥着很多<code>System.out.println();</code>等语句.其实<code>Redis</code>分布式锁比较正确的姿势是采用<code>redisson</code>这个客户端工具.具体介绍可以搜索最大的同性交友网站<code>github</code>.</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h2 id=&quot;Redis分布式锁如何续期&quot;&gt;&lt;a href=&quot;#Redis分布式锁如何续期&quot; class=&quot;headerlink&quot; title=&quot;Redis分布式锁如何续期&quot;&gt;&lt;/a&gt;Redis分布式锁如何续期&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jue
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://
       
     
     </summary>
