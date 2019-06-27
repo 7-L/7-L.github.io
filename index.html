@@ -341,6 +341,17 @@
 </li>
 </ul>
 <p>很多同学在用分布式锁时,都是直接百度搜索找一个<code>Redis</code>分布式锁工具类就直接用了.关键是该工具类中还充斥着很多<code>System.out.println();</code>等语句.其实<code>Redis</code>分布式锁比较正确的姿势是采用<code>redisson</code>这个客户端工具.具体介绍可以搜索最大的同性交友网站<code>github</code>.</p>
+<h3 id="如何回答"><a href="#如何回答" class="headerlink" title="如何回答"></a>如何回答</h3><hr>
+<p>首先如果你之前用Redis的分布式锁的姿势正确,并且看过相应的官方文档的话,这个问题So easy.我们来看</p>
+<p><img src="/2019/06/24/Redis/rtLock.png" alt="rtLock"></p>
+<p>坦白说,如果你英文棒棒哒那么看英文文档可能更好理解</p>
+<blockquote>
+<p>By default lock watchdog timeout is 30 seconds and can be changed through Config.lockWatchdogTimeout setting.</p>
+</blockquote>
+<p>但是如果看的是中文文档</p>
+<blockquote>
+<p>看门狗检查锁的超时时间默认是30秒</p>
+</blockquote>
 
           
         

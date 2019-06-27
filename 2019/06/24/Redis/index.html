@@ -81,19 +81,20 @@
 
 
 
-<meta name="description" content="Redis分布式锁如何续期 来源  问题  Redis分布式锁知识   很多同学在用分布式锁时,都是直接百度搜索找一个Redis分布式锁工具类就直接用了.关键是该工具类中还充斥着很多System.out.println();等语句.其实Redis分布式锁比较正确的姿势是采用redisson这个客户端工具.具体介绍可以搜索最大的同性交友网站github.">
+<meta name="description" content="Redis分布式锁如何续期 来源  问题  Redis分布式锁知识   很多同学在用分布式锁时,都是直接百度搜索找一个Redis分布式锁工具类就直接用了.关键是该工具类中还充斥着很多System.out.println();等语句.其实Redis分布式锁比较正确的姿势是采用redisson这个客户端工具.具体介绍可以搜索最大的同性交友网站github. 如何回答 首先如果你之前用Redis的分布式">
 <meta name="keywords" content="Redis,NoSQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="http://yoursite.com/2019/06/24/Redis/index.html">
 <meta property="og:site_name" content="h7lyaphets">
-<meta property="og:description" content="Redis分布式锁如何续期 来源  问题  Redis分布式锁知识   很多同学在用分布式锁时,都是直接百度搜索找一个Redis分布式锁工具类就直接用了.关键是该工具类中还充斥着很多System.out.println();等语句.其实Redis分布式锁比较正确的姿势是采用redisson这个客户端工具.具体介绍可以搜索最大的同性交友网站github.">
+<meta property="og:description" content="Redis分布式锁如何续期 来源  问题  Redis分布式锁知识   很多同学在用分布式锁时,都是直接百度搜索找一个Redis分布式锁工具类就直接用了.关键是该工具类中还充斥着很多System.out.println();等语句.其实Redis分布式锁比较正确的姿势是采用redisson这个客户端工具.具体介绍可以搜索最大的同性交友网站github. 如何回答 首先如果你之前用Redis的分布式">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/Redis/temp.png">
-<meta property="og:updated_time" content="2019-06-27T03:07:32.535Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/Redis/rtLock.png">
+<meta property="og:updated_time" content="2019-06-27T06:19:11.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="Redis分布式锁如何续期 来源  问题  Redis分布式锁知识   很多同学在用分布式锁时,都是直接百度搜索找一个Redis分布式锁工具类就直接用了.关键是该工具类中还充斥着很多System.out.println();等语句.其实Redis分布式锁比较正确的姿势是采用redisson这个客户端工具.具体介绍可以搜索最大的同性交友网站github.">
+<meta name="twitter:description" content="Redis分布式锁如何续期 来源  问题  Redis分布式锁知识   很多同学在用分布式锁时,都是直接百度搜索找一个Redis分布式锁工具类就直接用了.关键是该工具类中还充斥着很多System.out.println();等语句.其实Redis分布式锁比较正确的姿势是采用redisson这个客户端工具.具体介绍可以搜索最大的同性交友网站github. 如何回答 首先如果你之前用Redis的分布式">
 <meta name="twitter:image" content="http://yoursite.com/2019/06/24/Redis/temp.png">
 
 
@@ -339,6 +340,17 @@
 </li>
 </ul>
 <p>很多同学在用分布式锁时,都是直接百度搜索找一个<code>Redis</code>分布式锁工具类就直接用了.关键是该工具类中还充斥着很多<code>System.out.println();</code>等语句.其实<code>Redis</code>分布式锁比较正确的姿势是采用<code>redisson</code>这个客户端工具.具体介绍可以搜索最大的同性交友网站<code>github</code>.</p>
+<h3 id="如何回答"><a href="#如何回答" class="headerlink" title="如何回答"></a>如何回答</h3><hr>
+<p>首先如果你之前用Redis的分布式锁的姿势正确,并且看过相应的官方文档的话,这个问题So easy.我们来看</p>
+<p><img src="/2019/06/24/Redis/rtLock.png" alt="rtLock"></p>
+<p>坦白说,如果你英文棒棒哒那么看英文文档可能更好理解</p>
+<blockquote>
+<p>By default lock watchdog timeout is 30 seconds and can be changed through Config.lockWatchdogTimeout setting.</p>
+</blockquote>
+<p>但是如果看的是中文文档</p>
+<blockquote>
+<p>看门狗检查锁的超时时间默认是30秒</p>
+</blockquote>
 
       
     </div>
@@ -519,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis分布式锁如何续期"><span class="nav-number">1.</span> <span class="nav-text">Redis分布式锁如何续期</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis分布式锁如何续期"><span class="nav-number">1.</span> <span class="nav-text">Redis分布式锁如何续期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何回答"><span class="nav-number">1.1.</span> <span class="nav-text">如何回答</span></a></li></ol></li></ol></div>
             
 
           </div>
