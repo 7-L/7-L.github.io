@@ -81,17 +81,20 @@
 
 
 
+<meta name="description" content="整个过程可以分为以下几个步骤：在请求DNS解析之前应该还有一个，先去请求自己浏览器中的缓存，查看是否有对应的IP地址的缓存信息；  其实整个查找过程应该是 浏览器缓存-&amp;gt;系统缓存–路由器缓存—ISP DNS缓存（网络服务商（电信等）的DNS缓存）–递归搜索   浏览器发起DNS查询请求（域名解析服务器是基于UDP的，53端口）：浏览器作为客户端，当输入url时，浏览器中自动去请求DNS服">
 <meta name="keywords" content="dns,http,状态码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器访问一次网站的全过程">
 <meta property="og:url" content="http://yoursite.com/2019/07/22/浏览器访问一次网站的全过程/index.html">
 <meta property="og:site_name" content="h7lyaphets">
+<meta property="og:description" content="整个过程可以分为以下几个步骤：在请求DNS解析之前应该还有一个，先去请求自己浏览器中的缓存，查看是否有对应的IP地址的缓存信息；  其实整个查找过程应该是 浏览器缓存-&amp;gt;系统缓存–路由器缓存—ISP DNS缓存（网络服务商（电信等）的DNS缓存）–递归搜索   浏览器发起DNS查询请求（域名解析服务器是基于UDP的，53端口）：浏览器作为客户端，当输入url时，浏览器中自动去请求DNS服">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/07/22/浏览器访问一次网站的全过程/zong.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/22/浏览器访问一次网站的全过程/zong1.png">
-<meta property="og:updated_time" content="2019-07-22T02:30:04.831Z">
+<meta property="og:updated_time" content="2019-07-22T02:31:49.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器访问一次网站的全过程">
+<meta name="twitter:description" content="整个过程可以分为以下几个步骤：在请求DNS解析之前应该还有一个，先去请求自己浏览器中的缓存，查看是否有对应的IP地址的缓存信息；  其实整个查找过程应该是 浏览器缓存-&amp;gt;系统缓存–路由器缓存—ISP DNS缓存（网络服务商（电信等）的DNS缓存）–递归搜索   浏览器发起DNS查询请求（域名解析服务器是基于UDP的，53端口）：浏览器作为客户端，当输入url时，浏览器中自动去请求DNS服">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/22/浏览器访问一次网站的全过程/zong.png">
 
 
@@ -330,6 +333,17 @@
       
         <p><img src="/2019/07/22/浏览器访问一次网站的全过程/zong.png" alt="zong"></p>
 <p><img src="/2019/07/22/浏览器访问一次网站的全过程/zong1.png" alt="zong1"></p>
+<p>整个过程可以分为以下几个步骤：<br>在请求DNS解析之前应该还有一个，先去请求自己浏览器中的缓存，查看是否有对应的IP地址的缓存信息；</p>
+<ul>
+<li>其实整个查找过程应该是 浏览器缓存-&gt;系统缓存–路由器缓存—ISP DNS缓存（网络服务商（电信等）的DNS缓存）–递归搜索</li>
+</ul>
+<ol>
+<li>浏览器发起DNS查询请求（域名解析服务器是基于UDP的，53端口）：浏览器作为客户端，当输入url时，浏览器中自动去请求DNS服务器，</li>
+<li>经过域名解析之后获得相应的域名对应的IP；域名查询方式：根域名-&gt;顶级域名-&gt;次级域名-&gt;主机名。</li>
+<li>客户端通过IP地址找到IP对应的服务器之后，要求建立TCP连接（三次握手）；</li>
+<li>客户端发送HTTP请求，服务器接受HTTP请求并进行处理；<br>服务器收到请求之后，调用自身服务返回HTTP Response（响应包）；</li>
+<li>浏览器解析HTTP响应，将内容显示出来：客户端收到响应包之后开始渲染该包内的body收到全部内容之后断开与服务器之间的TCP连接。（4次挥手）</li>
+</ol>
 
       
     </div>
