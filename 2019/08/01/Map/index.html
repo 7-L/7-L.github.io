@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="h7lyaphets">
 <meta property="og:description" content="转载 Map，几乎是使用最广的一个数据结构了，他通过键值对应的方式存储数据。小到各种算法题，大到Redis数据库都是用这种存储方式。可以说，键值对应存储是存储格式发展的一个小趋势。因此掌握Java中各种Map也是必不可少的。 本文从面试提问的角度说一下各种Map的区别和应用场景。  Map的分类和存储方式如上文所说，Java中的Map是用来存储键值对的。Map在设计思想是通过把键值两个变量“装”到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T09:12:23.241Z">
+<meta property="og:updated_time" content="2019-08-01T09:13:23.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Map">
 <meta name="twitter:description" content="转载 Map，几乎是使用最广的一个数据结构了，他通过键值对应的方式存储数据。小到各种算法题，大到Redis数据库都是用这种存储方式。可以说，键值对应存储是存储格式发展的一个小趋势。因此掌握Java中各种Map也是必不可少的。 本文从面试提问的角度说一下各种Map的区别和应用场景。  Map的分类和存储方式如上文所说，Java中的Map是用来存储键值对的。Map在设计思想是通过把键值两个变量“装”到">
@@ -342,6 +342,16 @@
 <hr>
 <h3 id="树结构的Map"><a href="#树结构的Map" class="headerlink" title="树结构的Map"></a>树结构的Map</h3><p>TreeMap通过红黑树存储Node（键值对）。红黑树本身就是一个二叉排序树，因此TreeMap具有给插入数据排序的功能。面试中问道此处一般就会开始问你红黑树了，红黑树在Java中应用的相当广泛，而且实现起来比较复杂，因此面试官不会让你手写的，但是一定要对红黑树的特性，红黑树删除节点，插入节点的逻辑了解，能描述。</p>
 <p>TreeMap的排序是根据Comparable接口来实现的，插入的键需要实现该接口。而且可以自定义排序方式，通过构造函数传入Comparator指定排序方法。</p>
+<hr>
+<h3 id="Hash表结构的Map"><a href="#Hash表结构的Map" class="headerlink" title="Hash表结构的Map"></a>Hash表结构的Map</h3><p>重头戏开始了，基本面试只要问到Java基础十有八九就会问到HashTable，HashMap，ConcurrentHashMap。</p>
+<p>LinkedHashMap呢？</p>
+<p>LinkedHashMap是一种HashMap的特殊加强版，放到最后在讲它。</p>
+<p>下面通过几个面试经典问题来介绍这三个兄弟般的Map。</p>
+<h4 id="1-HashTable和HashMap的区别"><a href="#1-HashTable和HashMap的区别" class="headerlink" title="1.HashTable和HashMap的区别"></a>1.HashTable和HashMap的区别</h4><p>HashTable和HashMap的区别可以从线程安全性，执行效率，存储功能，继承体系四个方面说明。</p>
+<p><strong>线程安全性：HashTable是线程安全的，HashMap是非线程安全的。</strong></p>
+<p>这里我们可以打开源码查看一下。就会发现HashTable与HashMap的方法几乎一样。而且如果使用的早一点的JDK版本，这些方法的实现方法都基本一样，都是维护一个Hash表。但是HashTable的很多方法都在方法定义时加上了synchronized关键字确保线程安全。</p>
+<p>因此如果程序内没有线程问题（单线程程序），HashMap是首选。如果多线程程序且需要保证线程安全性，就使用HashTable。</p>
+<p>效率性：HashMap效率高，HashTable效率低。</p>
 
       
     </div>
@@ -520,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map的分类和存储方式"><span class="nav-number">1.</span> <span class="nav-text">Map的分类和存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树结构的Map"><span class="nav-number">2.</span> <span class="nav-text">树结构的Map</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map的分类和存储方式"><span class="nav-number">1.</span> <span class="nav-text">Map的分类和存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树结构的Map"><span class="nav-number">2.</span> <span class="nav-text">树结构的Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash表结构的Map"><span class="nav-number">3.</span> <span class="nav-text">Hash表结构的Map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-HashTable和HashMap的区别"><span class="nav-number">3.1.</span> <span class="nav-text">1.HashTable和HashMap的区别</span></a></li></ol></li></ol></div>
             
 
           </div>
