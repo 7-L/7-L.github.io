@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="h7lyaphets">
 <meta property="og:description" content="转载 Map，几乎是使用最广的一个数据结构了，他通过键值对应的方式存储数据。小到各种算法题，大到Redis数据库都是用这种存储方式。可以说，键值对应存储是存储格式发展的一个小趋势。因此掌握Java中各种Map也是必不可少的。 本文从面试提问的角度说一下各种Map的区别和应用场景。  Map的分类和存储方式如上文所说，Java中的Map是用来存储键值对的。Map在设计思想是通过把键值两个变量“装”到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T09:20:09.684Z">
+<meta property="og:updated_time" content="2019-08-01T09:22:17.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Map">
 <meta name="twitter:description" content="转载 Map，几乎是使用最广的一个数据结构了，他通过键值对应的方式存储数据。小到各种算法题，大到Redis数据库都是用这种存储方式。可以说，键值对应存储是存储格式发展的一个小趋势。因此掌握Java中各种Map也是必不可少的。 本文从面试提问的角度说一下各种Map的区别和应用场景。  Map的分类和存储方式如上文所说，Java中的Map是用来存储键值对的。Map在设计思想是通过把键值两个变量“装”到">
@@ -355,6 +355,12 @@
 <p>HashTable中很多方法都用synchronize关键字修饰。synchronized是重量级锁，操作锁时伴随着线程的挂起和唤醒，这需要我们在用户态和内核态进行切换，因此效率很低。反观HashMap就好多了，没有线程安全保证，效率好很多。</p>
 <p>而且在<strong>JDK8</strong>中的一大新特性就是对HashMap进行了加强。在之前的JDK版本中，HashMap在处理哈希碰撞时都是用链表解决。也就是所有Hash值一样的数据都保存在同一个链表中，这样当链表很长时检索就很吃力了，效率是O（n）。<strong>在JDK8中，如果链表中节点大于8就会把该链表转为红黑树存储</strong>，红黑树的查找效率是0（logn），效率更高。</p>
 <p>但是当红黑树中的数据通过remove操作减少到小于6个时，又会变回链表结构。因为维护红黑树也是一个很麻烦的事情，当数据较少时，链表存储效率更好。</p>
+<ul>
+<li>存储功能：HashMap可以存储空值（null），HashTable不可以。</li>
+</ul>
+<p>这个不同点主要的原因发生在给键计算hash值的时候。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//HashMap</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h;</span><br><span class="line">        <span class="comment">//如果传入的值是null，那么会返回0作为null的hash值</span></span><br><span class="line">        <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashTable 代码做了删减，保留了关键部分</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//如果值是null，抛出空指针异常</span></span><br><span class="line">        <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       ....</span><br><span class="line">      <span class="comment">//键的hash码计算需要先调用它自身的hashCode方法，如果键是null，直接就报空指针错误了</span></span><br><span class="line">        <span class="keyword">int</span> hash = key.hashCode();</span><br><span class="line">       ...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
