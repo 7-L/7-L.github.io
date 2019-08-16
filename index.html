@@ -487,6 +487,11 @@
 <p>这个不同点主要的原因发生在给键计算hash值的时候。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//HashMap</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h;</span><br><span class="line">        <span class="comment">//如果传入的值是null，那么会返回0作为null的hash值</span></span><br><span class="line">        <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashTable 代码做了删减，保留了关键部分</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//如果值是null，抛出空指针异常</span></span><br><span class="line">        <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       ....</span><br><span class="line">      <span class="comment">//键的hash码计算需要先调用它自身的hashCode方法，如果键是null，直接就报空指针错误了</span></span><br><span class="line">        <span class="keyword">int</span> hash = key.hashCode();</span><br><span class="line">       ...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="继承体系：HashMap是Map继承体系中的一员，HashTable是单独的一个类，父类是Dictionary"><a href="#继承体系：HashMap是Map继承体系中的一员，HashTable是单独的一个类，父类是Dictionary" class="headerlink" title="继承体系：HashMap是Map继承体系中的一员，HashTable是单独的一个类，父类是Dictionary"></a>继承体系：HashMap是Map继承体系中的一员，HashTable是单独的一个类，父类是Dictionary</h5><p>Map继承体系是一个设计非常精巧复杂的结构体系，其中包含众多的抽象类和实现类。通过这个结构体系，设计人员满足了开发人员自定义Map，多态更换，功能加强等多个需求。</p>
+<p>但是HashTable只有孤零零的一个类，不过它的年龄比整个Map体系都要大。</p>
+<h4 id="2-知道ConcurrentHashMap吗？说说吧"><a href="#2-知道ConcurrentHashMap吗？说说吧" class="headerlink" title="2.知道ConcurrentHashMap吗？说说吧"></a>2.知道ConcurrentHashMap吗？说说吧</h4><p>ConcurrentHashMap是在JDK5随着并发包的上线一起推出的，设计目的是让它成为HashTable的替代品。这里可以把ConcurrentHashMap与HashMap和HashTable比较着说明。</p>
+<p>众所周知，HashTable最大的缺点就是线程同步导致的效率低下。</p>
+<p>首先，ConcurrentHashMap也是线程安全的，但并不是像HashTable那样通篇方法加synchronize关键字使用重量级锁实现线程安全。在底层容器的设计上，ConcurrentHashMap存储数据把哈希表分为多个部分，每个部分被称为Segment。当操作map时只锁定一个Segment即可，其他的Segment不用上锁，减小了锁的粒度，增大了并发性。</p>
 
           
         
@@ -1908,7 +1913,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
